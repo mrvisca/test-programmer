@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/assets/dist/css/themes/enigma/side-nav.css">
         <link rel="stylesheet" href="/assets/dist/css/app.css">
         <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/dist/css/vendors/toastify.css">
         <style>
             /* Menyesuaikan lebar dropdown "Show entries" */
             .dataTables_length {
@@ -96,7 +97,7 @@
                     <div class="intro-y mt-8 flex flex-col items-center sm:flex-row">
                         <h2 class="mr-auto text-lg font-medium">List Produk</h2>
                         <div class="mt-4 flex w-full sm:mt-0 sm:w-auto">
-                            <button data-tw-merge="" class="transition duration-200 border inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary mr-2 shadow-md">Tambah Produk Baru</button>
+                            <button data-tw-merge="" class="transition duration-200 border inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary mr-2 shadow-md btn-tambah">Tambah Produk Baru</button>
                         </div>
                     </div>
                     <!-- BEGIN: HTML Table Data -->
@@ -121,10 +122,87 @@
                 <!-- END: Content -->
             </div>
         </div>
+        <!-- Modal Section -->
+            <!-- BEGIN: Modal Content -->
+            <div data-tw-backdrop="" aria-hidden="true" tabindex="-1" id="header-footer-modal-preview" class="modal group bg-black/60 transition-[visibility,opacity] w-screen h-screen fixed left-0 top-0 [&:not(.show)]:duration-[0s,0.2s] [&:not(.show)]:delay-[0.2s,0s] [&:not(.show)]:invisible [&:not(.show)]:opacity-0 [&.show]:visible [&.show]:opacity-100 [&.show]:duration-[0s,0.4s]">
+                <div data-tw-merge class="w-[90%] mx-auto bg-white relative rounded-md shadow-md transition-[margin-top,transform] duration-[0.4s,0.3s] -mt-16 group-[.show]:mt-16 group-[.modal-static]:scale-[1.05] dark:bg-darkmode-600 sm:w-[460px]">
+                    <div class="flex items-center px-5 py-3 border-b border-slate-200/60 dark:border-darkmode-400">
+                        <h2 class="mr-auto text-base font-medium">
+                            Form Tambah Data
+                        </h2>
+                        <a data-tw-dismiss="modal" href="javascript:;"> <i data-lucide="x" class="w-8 h-8 text-gray-500"></i></a>
+                    </div>
+                    <div data-tw-merge class="p-5 grid grid-cols-12 gap-4 gap-y-3">
+                        <div class="col-span-12 sm:col-span-12">
+                            <label data-tw-merge for="modal-form-1" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                Kategori
+                            </label>
+                            <select data-tw-merge="" aria-label="Default select example" class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 mt-2 sm:mr-2 form-id-kategori" required>
+                                <option disabled selected> --- Pilih Kategori Produk --- </option>
+                            </select>
+                        </div>
+                        <div class="col-span-12 sm:col-span-12">
+                            <label data-tw-merge for="modal-form-3" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                Nama Produk
+                            </label>
+                            <input data-tw-merge type="text" placeholder="Sosis Kenzler" class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 form-nama" required/>
+                            <div class="mt-2 text-danger nama-create-notif">
+                                Kolom nama tidak boleh kosong
+                            </div>
+                        </div>
+                        <div class="col-span-12 sm:col-span-12">
+                            <label data-tw-merge for="modal-form-4" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                Harga
+                            </label>
+                            <input data-tw-merge type="text" placeholder="8000" class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 form-harga" value="0" />
+                            <div class="mt-2 text-danger harganull-create-notif">
+                                Kolom harga tidak boleh kosong
+                            </div>
+                            <div class="mt-2 text-danger harga-create-notif">
+                                Kolom harga hanya di isi dengan angka
+                            </div>
+                        </div>
+                        <div class="col-span-12 sm:col-span-12">
+                            <label data-tw-merge for="modal-form-2" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                Status
+                            </label>
+                            <select data-tw-merge="" aria-label="Default select example" class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 mt-2 sm:mr-2 form-id-status" required>
+                                <option disabled selected> --- Pilih Status Produk --- </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="px-5 py-3 text-right border-t border-slate-200/60 dark:border-darkmode-400">
+                        <button data-tw-merge type="button" class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary w-20 w-20 btn-simpan">Simpan</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Modal Content -->
+            <!-- Toast Menu Create -->
+                <!-- BEGIN: Success Notification Content -->
+                <div id="success-notification-content" class="py-5 pl-5 pr-14 bg-white border border-slate-200/60 rounded-lg shadow-xl dark:bg-darkmode-600 dark:text-slate-300 dark:border-darkmode-600 hidden flex">
+                    <i data-tw-merge="" data-lucide="check-circle" class="stroke-1.5 w-5 h-5 text-success"></i>
+                    <div class="ml-4 mr-4">
+                        <div class="font-medium">Pembuatan produk baru berhasil!</div>
+                        <div class="mt-1 text-slate-500 pesan-sukses"></div>
+                    </div>
+                </div>
+                <!-- END: Success Notification Content -->
+                <!-- BEGIN: Success Notification Content -->
+                <div id="failed-notification-content" class="py-5 pl-5 pr-14 bg-white border border-slate-200/60 rounded-lg shadow-xl dark:bg-darkmode-600 dark:text-slate-300 dark:border-darkmode-600 hidden flex">
+                    <i data-tw-merge="" data-lucide="x-circle" class="stroke-1.5 w-5 h-5 text-success"></i>
+                    <div class="ml-4 mr-4">
+                        <div class="font-medium">Pembuatan produk baru gagal!</div>
+                        <div class="mt-1 text-slate-500 pesan-gagal"></div>
+                    </div>
+                </div>
+                <!-- END: Success Notification Content -->
+            <!-- End Toast Menu -->
+        <!-- End Modal Section -->
         <!-- BEGIN: Vendor JS Assets-->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.1/dist/feather.min.js"></script>
+        <script src="/assets/dist/js/vendors/toastify.js"></script>
         <script src="/assets/dist/js/vendors/dom.js"></script>
         <script src="/assets/dist/js/vendors/tailwind-merge.js"></script>
         <script src="/assets/dist/js/vendors/lucide.js"></script>
@@ -145,7 +223,50 @@
         <script>
             // cek package jquery
             jQuery(document).ready(function(){
-                // Ambil Data Admin
+                // Hide Element
+                jQuery('.nama-create-notif').hide()
+                jQuery('.harga-create-notif').hide()
+                jQuery('.harganull-create-notif').hide()
+
+                // Panggil data support Role
+                var url = 'http://localhost:8080/api/v1/support-data/kategori';
+                fetch(url, {
+                    method: 'GET',
+                }).then(response => response.json()).then(data => {
+                    var id_kategori = jQuery('.form-id-kategori');
+                    // var form_kategori_update = jQuery('.update-form-id-kategori');
+
+                    // Iterasi melalui data dan membuat objek untuk setiap entri
+                    jQuery.each(data, function(index, item) {
+                        for (let i = 0; i < item.length; i++) {
+                            id_kategori.append('<option value="' + item[i].id + '">' + item[i].nama + '</option>');
+                            // form_kategori_update.append('<option value="' + item[i].id + '">' + item[i].name + '</option>');
+                        }
+                    });
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+
+                // Panggil data support Role
+                var url = 'http://localhost:8080/api/v1/support-data/status';
+                fetch(url, {
+                    method: 'GET',
+                }).then(response => response.json()).then(data => {
+                    var id_status = jQuery('.form-id-status');
+                    // var form_status_update = jQuery('.update-form-id-status');
+
+                    // Iterasi melalui data dan membuat objek untuk setiap entri
+                    jQuery.each(data, function(index, item) {
+                        for (let i = 0; i < item.length; i++) {
+                            id_status.append('<option value="' + item[i].id + '">' + item[i].nama + '</option>');
+                            // form_kategori_update.append('<option value="' + item[i].id + '">' + item[i].name + '</option>');
+                        }
+                    });
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+
+                // Ambil Data List Produk
                 var url = 'http://localhost:8080/api/v1/produk/list';
                 fetch(url, {
                     method: 'GET',
@@ -211,6 +332,7 @@
                                 }
                             }
                         ],
+                        "order": [[0, 'desc']],
                         "drawCallback": function( settings ) {
                             feather.replace();
                         }
@@ -368,6 +490,92 @@
                         });
                     });
                 }
+
+                jQuery('.btn-tambah').click(function() {
+                    // jQuery('#header-footer-modal-preview').modal('show');
+                    tailwind.Modal.getOrCreateInstance(jQuery("#header-footer-modal-preview")[0]).show();
+                })
+
+                jQuery(".btn-simpan").click(function() {
+                    var kategories = jQuery('.form-id-kategori').val()
+                    var statuses = jQuery('.form-id-status').val()
+                    var name = jQuery('.form-nama').val()
+                    var harga = jQuery('.form-harga').val()
+
+                    // Validasi data
+                    if (name === "")
+                    {
+                        jQuery('.nama-create-notif').show()
+                    }else{
+                        jQuery('.nama-create-notif').hide()
+                    }
+
+                    if (harga.trim() === "") {
+                        jQuery('.harganull-create-notif').show()
+                        jQuery('.harga-create-notif').hide()
+                    } else if (isNaN(harga)) {
+                        jQuery('.harga-create-notif').show()
+                        jQuery('.harganull-create-notif').hide()
+                    }else{
+                        jQuery('.harga-create-notif').hide()
+                        jQuery('.harganull-create-notif').hide()
+                    }
+
+                    var formData = new FormData();
+                    formData.append('kategori_id', kategories);
+                    formData.append('status_id', statuses);
+                    formData.append('nama', name);
+                    formData.append('harga', harga);
+
+                    // Kirim permintaan pembaruan produk ke API
+                    jQuery.ajax({
+                        url: 'http://localhost:8080/api/v1/produk/tambah-data',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            if (response.status == 'Sukses')
+                            {
+                                // Tampilkan notifikasi toast sukses
+                                jQuery('.pesan-sukses').text(response.message);
+                                Toastify({
+                                    node: $("#success-notification-content")
+                                        .clone()
+                                        .removeClass("hidden")[0],
+                                    duration: 2000,
+                                    newWindow: true,
+                                    close: true,
+                                    gravity: "top",
+                                    position: "right",
+                                    stopOnFocus: true,
+                                }).showToast();
+
+                                // Redirect ke halaman dashboard admin
+                                setTimeout(function() {
+                                    location.reload()
+                                }, 3000); // 3000 milliseconds = 3 seconds
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            // Show the modal
+                            // Parsing responseText sebagai JSON
+                            var hpes = JSON.parse(xhr.responseText);
+                            jQuery('.pesan-gagal').text(hpes.message);
+                            Toastify({
+                                node: $("#failed-notification-content")
+                                    .clone()
+                                    .removeClass("hidden")[0],
+                                duration: 2000,
+                                newWindow: true,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                stopOnFocus: true,
+                            }).showToast();
+                        }
+                    });
+                })
             })
         </script>
         <!-- END: Vendor JS Assets-->

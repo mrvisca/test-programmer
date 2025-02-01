@@ -42,6 +42,9 @@ func WebAppRoute() {
 		proMenu := v1.Group("/produk/")
 		{
 			proMenu.GET("/list", controllers.ListProduk)
+			proMenu.POST("/tambah-data", controllers.CreateProduk)
+			proMenu.PUT("/update-data/:id", controllers.UpdateProduk)
+			proMenu.DELETE("/hapus-data/:id", controllers.HapusProduk)
 		}
 
 		supportMenu := v1.Group("/support-data/")

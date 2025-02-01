@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" class="opacity-0" lang="en"><!-- BEGIN: Head -->
+    
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="csrf-token" content="Koo2zWJKliRELq4FawEfkQPg3CJYusp6ppGFZw4O">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+        <meta name="keywords" content="admin template, midone Admin Template, dashboard template, flat admin template, responsive admin template, web app">
+        <meta name="author" content="LEFT4CODE">
+        <title>Tabulator - Midone - Tailwind Admin Dashboard Template</title>
+        <!-- BEGIN: CSS Assets-->
+        <link rel="stylesheet" href="/assets/dist/css/vendors/tabulator.css">
+        <link rel="stylesheet" href="/assets/dist/css/vendors/simplebar.css">
+        <link rel="stylesheet" href="/assets/dist/css/components/mobile-menu.css">
+        <link rel="stylesheet" href="/assets/dist/css/vendors/tippy.css">
+        <link rel="stylesheet" href="/assets/dist/css/themes/enigma/side-nav.css">
+        <link rel="stylesheet" href="/assets/dist/css/app.css">
+        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+        <style>
+            /* Menyesuaikan lebar dropdown "Show entries" */
+            .dataTables_length {
+                width: 200px; /* Sesuaikan lebar sesuai kebutuhan Anda */
+            }
+
+            /* Menyesuaikan lebar opsi dropdown */
+            .dataTables_length select {
+                width: 30%; /* Menggunakan lebar penuh */
+                box-sizing: border-box; /* Menambahkan padding dan border ke dalam lebar */
+            }
+        </style>
+        <!-- END: CSS Assets-->
+    </head>
+    <!-- END: Head -->
+    <body>
+        <div class="enigma py-5 px-5 md:py-0 sm:px-8 md:px-0 before:content-[''] before:bg-gradient-to-b before:from-theme-1 before:to-theme-2 dark:before:from-darkmode-800 dark:before:to-darkmode-800 md:before:bg-none md:bg-slate-200 md:dark:bg-darkmode-800 before:fixed before:inset-0 before:z-[-1]">
+            <!-- BEGIN: Top Bar -->
+            <div class="h-[70px] md:h-[65px] z-[51] border-b border-white/[0.08] mt-12 md:mt-0 -mx-5 sm:-mx-8 md:-mx-0 px-3 md:border-b-0 relative md:fixed md:inset-x-0 md:top-0 sm:px-8 md:px-10 md:pt-10 md:bg-gradient-to-b md:from-slate-100 md:to-transparent dark:md:from-darkmode-700 before:content-[''] before:absolute before:h-[65px] before:inset-0 before:top-0 before:mx-7 before:bg-primary/30 before:mt-3 before:rounded-xl before:hidden before:md:block before:dark:bg-darkmode-600/30 after:content-[''] after:absolute after:inset-0 after:h-[65px] after:mx-3 after:bg-primary after:mt-5 after:rounded-xl after:shadow-md after:hidden after:md:block after:dark:bg-darkmode-600">
+                <div class="flex h-full items-center">
+                    <!-- BEGIN: Logo -->
+                    <a href="#" class="-intro-x hidden md:flex xl:w-[180px]">
+                        <img class="w-6" src="/assets/dist/images/logo.svg" alt="Enigma Tailwind HTML Admin Template">
+                        <span class="ml-3 text-lg text-white hidden xl:block">
+                            Visca APP
+                        </span>
+                    </a>
+                    <!-- END: Logo -->
+                    <!-- BEGIN: Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="flex h-[45px] md:ml-10 md:border-l border-white/[0.08] dark:border-white/[0.08] mr-auto -intro-x md:pl-6">
+                        <ol class="flex items-center text-theme-1 dark:text-slate-300 text-white/90">
+                            <li class="">
+                                <a href="#">Aplikasi</a>
+                            </li>
+                            <li class="relative ml-5 pl-0.5 before:content-[''] before:w-[14px] before:h-[14px] before:bg-chevron-white before:transform before:rotate-[-90deg] before:bg-[length:100%] before:-ml-[1.125rem] before:absolute before:my-auto before:inset-y-0 dark:before:bg-chevron-white text-white/70">
+                                <a href="#">List Produk</a>
+                            </li>
+                        </ol>
+                    </nav>
+                    <!-- END: Breadcrumb -->
+                    <!-- BEGIN: Account Menu -->
+                    <div data-tw-merge="" data-tw-placement="bottom-end" class="dropdown relative"><button data-tw-toggle="dropdown" aria-expanded="false" class="cursor-pointer image-fit zoom-in intro-x block h-8 w-8 scale-110 overflow-hidden rounded-full shadow-lg"><img src="/assets/dist/images/fakers/profile-9.jpg" alt="Midone Tailwind HTML Admin Template">
+                        </button>
+                        <div data-transition="" data-selector=".show" data-enter="transition-all ease-linear duration-150" data-enter-from="absolute !mt-5 invisible opacity-0 translate-y-1" data-enter-to="!mt-1 visible opacity-100 translate-y-0" data-leave="transition-all ease-linear duration-150" data-leave-from="!mt-1 visible opacity-100 translate-y-0" data-leave-to="absolute !mt-5 invisible opacity-0 translate-y-1" class="dropdown-menu absolute z-[9999] hidden">
+                            <div data-tw-merge="" class="dropdown-content rounded-md border-transparent p-2 shadow-[0px_3px_10px_#00000017] dark:border-transparent dark:bg-darkmode-600 relative mt-px w-56 bg-theme-1/80 text-white before:absolute before:inset-0 before:z-[-1] before:block before:rounded-md before:bg-black">
+                                <div class="p-2 font-medium font-normal">
+                                    <div class="font-medium">Brad Pitt</div>
+                                    <div class="mt-0.5 text-xs text-white/70 dark:text-slate-500">
+                                        Frontend Engineer
+                                    </div>
+                                </div>
+                                <div class="h-px my-2 -mx-2 bg-slate-200/60 dark:bg-darkmode-400 bg-white/[0.08]">
+                                </div>
+                                <a class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item hover:bg-white/5"><i data-tw-merge="" data-lucide="user" class="stroke-1.5 mr-2 h-4 w-4"></i>
+                                    Profile</a>
+                                <a class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item hover:bg-white/5"><i data-tw-merge="" data-lucide="edit" class="stroke-1.5 mr-2 h-4 w-4"></i>
+                                    Add Account</a>
+                                <a class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item hover:bg-white/5"><i data-tw-merge="" data-lucide="lock" class="stroke-1.5 mr-2 h-4 w-4"></i>
+                                    Reset Password</a>
+                                <a class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item hover:bg-white/5"><i data-tw-merge="" data-lucide="help-circle" class="stroke-1.5 mr-2 h-4 w-4"></i>
+                                    Help</a>
+                                <div class="h-px my-2 -mx-2 bg-slate-200/60 dark:bg-darkmode-400 bg-white/[0.08]">
+                                </div>
+                                <a class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item hover:bg-white/5"><i data-tw-merge="" data-lucide="toggle-right" class="stroke-1.5 mr-2 h-4 w-4"></i>
+                                    Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Account Menu -->
+                </div>
+            </div>
+            <!-- END: Top Bar -->
+            <div class="flex overflow-hidden">
+                <!-- BEGIN: Content -->
+                <div class="max-w-full md:max-w-none rounded-[30px] md:rounded-none px-4 md:px-[22px] min-w-0 min-h-screen bg-slate-100 flex-1 md:pt-20 pb-10 mt-5 md:mt-1 relative dark:bg-darkmode-700 before:content-[''] before:w-full before:h-px before:block">
+                    <div class="intro-y mt-8 flex flex-col items-center sm:flex-row">
+                        <h2 class="mr-auto text-lg font-medium">List Produk</h2>
+                        <div class="mt-4 flex w-full sm:mt-0 sm:w-auto">
+                            <button data-tw-merge="" class="transition duration-200 border inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary mr-2 shadow-md">Tambah Produk Baru</button>
+                        </div>
+                    </div>
+                    <!-- BEGIN: HTML Table Data -->
+                    <div class="intro-y box p-5 mt-5">
+                        <div class="overflow-x-auto scrollbar-hidden">
+                            <table id="data-table" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Produk</th>
+                                        <th>Kategori</th>
+                                        <th>Harga</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END: HTML Table Data -->
+                </div>
+                <!-- END: Content -->
+            </div>
+        </div>
+        <!-- BEGIN: Vendor JS Assets-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.1/dist/feather.min.js"></script>
+        <script src="/assets/dist/js/vendors/dom.js"></script>
+        <script src="/assets/dist/js/vendors/tailwind-merge.js"></script>
+        <script src="/assets/dist/js/vendors/lucide.js"></script>
+        <script src="/assets/dist/js/vendors/popper.js"></script>
+        <script src="/assets/dist/js/vendors/dropdown.js"></script>
+        <script src="/assets/dist/js/vendors/tippy.js"></script>
+        <script src="/assets/dist/js/vendors/transition.js"></script>
+        <script src="/assets/dist/js/vendors/simplebar.js"></script>
+        <script src="/assets/dist/js/vendors/tabulator.js"></script>
+        <script src="/assets/dist/js/vendors/xlsx.js"></script>
+        <script src="/assets/dist/js/vendors/modal.js"></script>
+        <script src="/assets/dist/js/components/base/theme-color.js"></script>
+        <script src="/assets/dist/js/components/base/lucide.js"></script>
+        <script src="/assets/dist/js/themes/enigma.js"></script>
+        <script src="/assets/dist/js/pages/tabulator.js"></script>
+        <script src="/assets/dist/js/components/mobile-menu.js"></script>
+        <script src="/assets/dist/js/components/themes/enigma/top-bar.js"></script>
+        <script>
+            // cek package jquery
+            jQuery(document).ready(function(){
+                // Ambil Data Admin
+                var url = 'http://localhost:8080/api/v1/produk/list';
+                fetch(url, {
+                    method: 'GET',
+                }).then(response => response.json()).then(data => {
+                    // Panggil fungsi untuk mengisi data ke dalam tbody DataTable
+                    populateDataTable(data);
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+
+                function populateDataTable(data) {
+                    var tableBody = jQuery("#data-body");
+
+                    // Bersihkan isi tbody sebelum mengisi dengan data baru
+                    tableBody.empty();
+
+                    var rowDataArray = []; // Variabel untuk menyimpan objek baris
+
+                    // Perulangan menggunakan jQuery.each()
+                    jQuery.each(data, function(index, item) {
+                        for (let i = 0; i < item.length; i++) {
+                            // // Create an object with the desired properties
+                            var rowData = {
+                                id: item[i].id,
+                                kategori_id: item[i].kategori_id,
+                                kategori_nama: item[i].kategori_nama,
+                                status_id: item[i].status_id,
+                                status_nama: item[i].status_nama,
+                                nama: item[i].nama,
+                                harga: item[i].harga,
+                            };
+
+                            // Push the object to the data array
+                            rowDataArray.push(rowData);
+                        }
+                    });
+
+                    var dataTable = jQuery('#data-table').DataTable();
+                    if (dataTable) {
+                        // Destroy DataTable
+                        dataTable.destroy();
+                    }
+
+                    // Initialize DataTable
+                    var table = jQuery('#data-table').DataTable({
+                        data: rowDataArray,
+                        columns: [
+                            { data: 'nama'},
+                            { data: 'kategori_nama'},
+                            { data: 'harga'},
+                            { data: 'status_nama'},
+                            {
+                                data: null,
+                                render: function (data, type, row) {
+
+                                    // Create action buttons
+                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '" data-phone="' + data.phone + '" data-is_verified="' + data.is_verified + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
+                                    var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
+
+                                    // Combine the buttons
+                                    var actions = editBtn + '  ||  ' + deleteBtn;
+                                    return actions;
+                                }
+                            }
+                        ],
+                        "drawCallback": function( settings ) {
+                            feather.replace();
+                        }
+                    });
+
+                    // Passing data list row ke dalam modal update
+                    jQuery('#data-table').on('click', '.btn-edit', function() {
+                        // Show the modal
+                        const el = document.querySelector("#header-update-footer-modal-preview");
+                        const modal = tailwind.Modal.getOrCreateInstance(el);
+                        modal.show();
+
+                        var id = jQuery(this).attr("data-id");
+                        var name = jQuery(this).attr("data-name");
+                        var email = jQuery(this).attr("data-email");
+                        var role_id = jQuery(this).attr("data-role_id");
+                        var phone = jQuery(this).attr("data-phone");
+                        var is_verified = jQuery(this).attr("data-is_verified");
+
+                        // Handle edit action
+                        jQuery('.update-form-id').val(id);
+                        jQuery('.update-form-nama').val(name);
+                        jQuery('.update-form-email').val(email);
+                        jQuery('.update-form-role_id').val(role_id);
+                        jQuery('.update-form-phone').val(phone);
+                        if(is_verified == "false")
+                        {
+                            jQuery(".update-form-verifikasi").prop("checked", false);
+                        }else{
+                            jQuery(".update-form-verifikasi").prop("checked", true);
+                        }
+                    });
+
+                    // Tombol Update Admin
+                    jQuery(".btn-update").click(function() {
+                        // Ajax update
+                        var updateid = jQuery('.update-form-id').val();
+                        var role_id = jQuery('.update-form-role_id').val();
+                        var name = jQuery('.update-form-nama').val();
+                        var email = jQuery('.update-form-email').val();
+                        var password = jQuery('.update-form-password').val();
+                        var phone = jQuery('.update-form-phone').val();
+                        var verifikasi = jQuery('.update-form-verifikasi').prop('checked');
+
+                        // Kirim permintaan pembaruan produk ke API
+                        jQuery.ajax({
+                            url: 'http://127.0.0.1:8080/api/v1/staff/update/' + updateid,
+                            type: "PUT",
+                            beforeSend: function(xhr) {
+                                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                            },
+                            contentType: 'application/x-www-form-urlencoded',
+                            data: {
+                                role_id: role_id,
+                                name: name,
+                                email: email,
+                                password: password,
+                                phone: phone,
+                                verifikasi: verifikasi
+                            },
+                            success: function(response) {
+                                // Show the modal
+                                jQuery('.updateres-sukses').text(response.message);
+                                Toastify({
+                                    node: $("#success-update-notification-content")
+                                        .clone()
+                                        .removeClass("hidden")[0],
+                                    duration: 3000,
+                                    newWindow: true,
+                                    close: true,
+                                    gravity: "top",
+                                    position: "right",
+                                    stopOnFocus: true,
+                                }).showToast();
+
+                                setTimeout(function() {
+                                    location.reload();
+                                }, 3000); // 3000 milliseconds = 3 seconds
+                            },
+                            error: function(xhr, status, error) {
+                                // Show the modal
+                                jQuery('.updateres-gagal').text(response.message);
+                                Toastify({
+                                    node: $("#fail-update-notification-content")
+                                        .clone()
+                                        .removeClass("hidden")[0],
+                                    duration: 5000,
+                                    newWindow: true,
+                                    close: true,
+                                    gravity: "top",
+                                    position: "right",
+                                    stopOnFocus: true,
+                                }).showToast();
+
+                                setTimeout(function() {
+                                    location.reload();
+                                }, 5000); // 3000 milliseconds = 3 seconds
+                            }
+                        });
+                    });
+
+                    // Fungsi Tombol hapus
+                    jQuery('#data-table').on('click', '.btn-delete', function() {
+                        var id = jQuery(this).attr("data-id");
+
+                        // Show the modal
+                        const el = document.querySelector("#delete-modal-preview");
+                        const modal = tailwind.Modal.getOrCreateInstance(el);
+                        modal.show();
+
+                        jQuery('.hapus-btn').click(function() {
+                            // Ajax delete Api
+                            jQuery.ajax({
+                                url: 'http://127.0.0.1:8080/api/v1/staff/hapus/' + id,
+                                type: 'DELETE',
+                                headers: {
+                                    'Authorization': 'Bearer ' + token
+                                },
+                                success: function(response) {
+                                    // Show the modal
+                                    jQuery('.hapus-sukses').text(response.message);
+                                    Toastify({
+                                        node: $("#success-hapus-notification-content")
+                                            .clone()
+                                            .removeClass("hidden")[0],
+                                        duration: 3000,
+                                        newWindow: true,
+                                        close: true,
+                                        gravity: "top",
+                                        position: "right",
+                                        stopOnFocus: true,
+                                    }).showToast();
+
+                                    setTimeout(function() {
+                                        location.reload();
+                                    }, 3000); // 3000 milliseconds = 3 seconds
+                                },
+                                error: function(xhr, status, error) {
+                                    // Show the modal
+                                    var hpes = JSON.parse(xhr.responseText);
+                                    jQuery('.hapus-gagal').text(hpes.message);
+                                    Toastify({
+                                        node: $("#fail-hapus-notification-content")
+                                            .clone()
+                                            .removeClass("hidden")[0],
+                                        duration: 5000,
+                                        newWindow: true,
+                                        close: true,
+                                        gravity: "top",
+                                        position: "right",
+                                        stopOnFocus: true,
+                                    }).showToast();
+                                }
+                            });
+                        });
+                    });
+                }
+            })
+        </script>
+        <!-- END: Vendor JS Assets-->
+        <!-- BEGIN: Pages, layouts, components JS Assets-->
+        <!-- END: Pages, layouts, components JS Assets-->
+    </body>
+</html>

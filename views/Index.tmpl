@@ -475,9 +475,13 @@
                         var updharga = jQuery('.upd-harga').val();
 
                         // Validasi data
+                        var isValid = true;
+
+                        // Validasi data
                         if (updnama === "")
                         {
                             jQuery('.nama-update-notif').show()
+                            isValid = false;
                         }else{
                             jQuery('.nama-update-notif').hide()
                         }
@@ -485,12 +489,19 @@
                         if (updharga.trim() === "") {
                             jQuery('.harganull-update-notif').show()
                             jQuery('.harga-update-notif').hide()
+                            isValid = false;
                         } else if (isNaN(updharga)) {
                             jQuery('.harga-update-notif').show()
                             jQuery('.harganull-update-notif').hide()
+                            isValid = false;
                         }else{
                             jQuery('.harga-update-notif').hide()
                             jQuery('.harganull-update-notif').hide()
+                        }
+
+                        // Jika validasi gagal, hentikan eksekusi AJAX
+                        if (!isValid) {
+                            return;
                         }
 
                         // Kirim permintaan pembaruan produk ke API
@@ -609,9 +620,13 @@
                     var harga = jQuery('.form-harga').val()
 
                     // Validasi data
+                    var apakahValid = true;
+
+                    // Validasi data
                     if (name === "")
                     {
                         jQuery('.nama-create-notif').show()
+                        apakahValid = false
                     }else{
                         jQuery('.nama-create-notif').hide()
                     }
@@ -619,12 +634,19 @@
                     if (harga.trim() === "") {
                         jQuery('.harganull-create-notif').show()
                         jQuery('.harga-create-notif').hide()
+                        apakahValid = false
                     } else if (isNaN(harga)) {
                         jQuery('.harga-create-notif').show()
                         jQuery('.harganull-create-notif').hide()
+                        apakahValid = false
                     }else{
                         jQuery('.harga-create-notif').hide()
                         jQuery('.harganull-create-notif').hide()
+                    }
+
+                    // Jika validasi gagal, hentikan eksekusi AJAX
+                    if (!apakahValid) {
+                        return;
                     }
 
                     var formData = new FormData();

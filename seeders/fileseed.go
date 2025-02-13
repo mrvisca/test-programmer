@@ -67,8 +67,8 @@ func ProdukSeed(c *gin.Context) {
 		response, err := client.R().
 			SetHeader("Content-Type", "application/x-www-form-urlencoded").
 			SetFormData(map[string]string{
-				"username": "tesprogrammer010225C21",
-				"password": "439e9ae1df04d71e83defc0478ff65bc",
+				"username": "tesprogrammer020225C11",
+				"password": "f5b19028eada889c04785c6b878b948f",
 			}).
 			Post(url)
 
